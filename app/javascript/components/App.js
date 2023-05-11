@@ -1,15 +1,17 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Greeting from './greetings'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from '../store/createStore'
+import Greetings from './greetings'
 
-const App = () => {
+export default function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component="<Greeting/>" />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Greetings/>} />
+      </Routes>
+    </BrowserRouter>
+    </Provider>
   )
 }
-
-export default App
