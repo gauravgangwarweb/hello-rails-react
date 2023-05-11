@@ -12,7 +12,7 @@ export default function greetings() {
   const handler = () => {
     dispatch(fetchGreeting())
   }
-
+  
   return (
     <div className='greeting-container'>
       {loading && <div className='loader'></div>}
